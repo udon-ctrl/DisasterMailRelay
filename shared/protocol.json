@@ -1,11 +1,7 @@
 {
-"protocol": "DisasterMailRelay/1.0",
-"fields": {
-"message_id": "string (UUID)",
-"recipient_hash": "sha256(base64(email))",
-"encrypted_payload_b64": "string",
-"ttl_seconds": "int",
-"created_at": "timestamp"
-},
-"encryption": "RSA + AES"
+  "protocol": "DisasterMailRelay/1.0",
+  "message_id": "abc123",
+  "ttl": 3600,
+  "encrypted_body": "Base64文字列",
+  "encrypted_key": "RSAで暗号化されたAESキー"
 }

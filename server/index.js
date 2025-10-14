@@ -28,7 +28,7 @@ async function sendMail(to, subject, body) {
 
 // 動作テスト
 sendMail(
-  "masanobu827@gmail.com",
+  "s1330173@u-aizu.ac.jp",
   "[災害用メールテスト]",
-  "これはBさんの端末から送信されたメールです。"
+  "おまんまん"
 );
