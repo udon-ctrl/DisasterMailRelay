@@ -1,0 +1,28 @@
+// プロジェクトレベル build.gradle
+
+buildscript {
+    repositories {
+        google()  // Android公式ライブラリ
+        mavenCentral()  // 依存ライブラリ
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.3.0' // Android Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0" // Kotlin Gradle Plugin
+    }
+}
+
+allprojects {
+    repositories {
+        // 国内ミラー例（AlibabaのGoogle/Mavenミラー）
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+
+        // 標準のリポジトリ
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
