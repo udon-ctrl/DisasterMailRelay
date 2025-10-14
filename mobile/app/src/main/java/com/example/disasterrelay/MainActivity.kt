@@ -15,6 +15,11 @@ class MainActivity : AppCompatActivity() {
         ble = BleManager(this)
         storage = StorageHelper(this)
 
+        Log.d(TAG, "アプリが起動しました")          // デバッグ用
+        Log.i(TAG, "情報ログの例")                  // 情報
+        Log.w(TAG, "警告ログの例")                  // 警告
+        Log.e(TAG, "エラーログの例")                // エラー
+
         // 1. 広告開始
         val data = Protocol.toJson(
             ProtocolData(recipient_hash = "hash123", encrypted_payload_b64 = "payloadXYZ")
