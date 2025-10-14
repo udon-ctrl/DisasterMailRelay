@@ -7,18 +7,19 @@ import android.util.Log
 class MainActivity : AppCompatActivity() {
     private lateinit var ble: BleManager
     private lateinit var storage: StorageHelper
+    private val TAG = "DisasterRelay"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ble = BleManager(this)
-        storage = StorageHelper(this)
-
         Log.d(TAG, "アプリが起動しました")          // デバッグ用
         Log.i(TAG, "情報ログの例")                  // 情報
         Log.w(TAG, "警告ログの例")                  // 警告
         Log.e(TAG, "エラーログの例")                // エラー
+
+        ble = BleManager(this)
+        storage = StorageHelper(this)
 
         // 1. 広告開始
         val data = Protocol.toJson(
