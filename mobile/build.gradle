@@ -10,6 +10,15 @@ buildscript {
     }
 }
 
+// build.gradle.kts (ルート)
+plugins {
+    // 例: Android Gradle Pluginのバージョン
+    id("com.android.application") version "8.4.2" apply false
+    // 例: Kotlin Gradle Pluginのバージョン (AGPと合わせることが推奨されます)
+    id("org.jetbrains.kotlin.android") version "1.9.23" apply false
+}
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
