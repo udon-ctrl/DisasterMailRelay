@@ -1,20 +1,22 @@
 // settings.gradle (Groovy形式)
 
-// プラグインのダウンロード元（倉庫）を指定する、最重要ブロック
+// プラグインの管理設定
 pluginManagement {
+    // プラグインを探しに行く「倉庫」のリスト
     repositories {
-        // Gradle公式のプラグイン倉庫
-        gradlePluginPortal()
-        // Googleのプラグイン倉庫
+        // Googleのプラグインが置いてある倉庫
         google()
-        // 一般的なライブラリの倉庫
+        // 一般的なライブラリやプラグインが置いてある倉庫
         mavenCentral()
+        // Gradle公式のプラグインが置いてある倉庫
+        gradlePluginPortal()
     }
 }
 
-// ライブラリのダウンロード元を指定するブロック
+// ライブラリの管理設定
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    // ライブラリを探しに行く「倉庫」のリスト
     repositories {
         google()
         mavenCentral()
@@ -25,4 +27,3 @@ dependencyResolutionManagement {
 rootProject.name = "DisasterMailRelay"
 // このプロジェクトに含まれるモジュール（部品）
 include ':mobile'
-
