@@ -1,12 +1,48 @@
-// build.gradle.kts (ルート)
+// このファイルは mobile/build.gradle です
+
+// 1. このモジュールで使うプラグインを指定します
 plugins {
-    // 例: Android Gradle Pluginのバージョン
-    id("com.android.application") version "8.4.2" apply false
-    // 例: Kotlin Gradle Pluginのバージョン (AGPと合わせることが推奨されます)
-    id("org.jetbrains.kotlin.android") version "1.9.23" apply false
+    id("com.android.application") // Androidアプリのプラグイン
+    id("org.jetbrains.kotlin.android") // Kotlin言語のプラグイン
 }
 
+// 2. Androidアプリの基本的な設定をします
+android {
+    namespace = "com.example.disastermailrelay" // ← ご自身のアプリに合わせて変更してください
+    compileSdk = 34 // Androidのバージョンを指定
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    defaultConfig {
+        applicationId = "com.example.disastermailrelay" // ← ご自身のアプリに合わせて変更してください
+        minSdk = 24 // サポートする一番古いAndroidバージョン
+        targetSdk = 34 // ターゲットとするAndroidバージョン
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
+
+// 3. このアプリで使うライブラリ（追加の道具）を指定します
+dependencies {
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    // 他に必要なライブラリがあればここに追加します
+}
+
