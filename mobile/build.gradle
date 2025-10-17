@@ -1,48 +1,52 @@
-// このファイルは mobile/build.gradle.kts です
+// このファイルは mobile/build.gradle です (Groovy形式)
+
 // 1. このモジュールで使うプラグインを指定します
+// Groovyでは引用符が ' または " になります
 plugins {
-    id("com.android.application") // Androidアプリのプラグイン
-    id("org.jetbrains.kotlin.android") // Kotlin言語のプラグイン
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 // 2. Androidアプリの基本的な設定をします
 android {
-    namespace = "com.example.disastermailrelay" // ← ご自身のアプリに合わせて変更してください
-    compileSdk = 34 // Androidのバージョンを指定
+    // `=` は不要になります
+    namespace 'com.example.disastermailrelay'
+    compileSdk 34
 
     defaultConfig {
-        applicationId = "com.example.disastermailrelay" // ← ご自身のアプリに合わせて変更してください
-        minSdk = 24 // サポートする一番古いAndroidバージョン
-        targetSdk = 34 // ターゲットとするAndroidバージョン
-        versionCode = 1
-        versionName = "1.0"
+        applicationId 'com.example.disastermailrelay'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
-            )
+        release {
+            // ★★★ここが一番大事な変更点です★★★
+            // isMinifyEnabled = false  ではなく
+            // minifyEnabled false  と書きます
+            minifyEnabled false
+
+            // () も不要になります
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
     }
 }
 
 // 3. このアプリで使うライブラリ（追加の道具）を指定します
 dependencies {
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.appcompat:appcompat:1.7.0")
+    // () も不要になります
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     // 他に必要なライブラリがあればここに追加します
 }
-

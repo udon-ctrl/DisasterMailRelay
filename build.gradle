@@ -1,7 +1,1 @@
-// このファイルはプロジェクトのルートにある build.gradle です
 
-// 全体で使うプラグインのバージョンをここで管理します
-plugins {
-    id("com.android.application") version "8.4.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.23" apply false
-}
