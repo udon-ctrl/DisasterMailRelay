@@ -1,7 +1,0 @@
-{
-  "protocol": "DisasterMailRelay/1.0",
-  "message_id": "abc123",
-  "ttl": 3600,
-  "encrypted_body": "Base64文字列",
-  "encrypted_key": "RSAで暗号化されたAESキー"
-}
