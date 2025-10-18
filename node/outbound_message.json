@@ -1,0 +1,9 @@
+{
+  "protocol": "DisasterMailRelay/1.0",
+  "message_id": "b6e735c5-fac1-4a45-b3ba-e86410e97f45",
+  "ttl": 3600,
+  "to": "udonudonudon12@icloud.com",
+  "encrypted_body": "mpCtVKSZrLhJgGk1/fgzi7Zy1z7SoO6dWL9tMEmXVW4+C9XyHX/cGPpJ2hnLeP3fHid1SKP7NgtlGqmzKC3UB14OHJIn0Obo315++sVlRC1rWb/Nw5i8Uqe7HXbcYz9c3qgUVZlUscLueegzFEbA+w==",
+  "encrypted_key": "XnXH97V5b4/1Md0YMcipg/trvz/KLnVTd4pwUjv/c+fhmxqOYndUPIymS+GcDh6KlT66UBSGckJBJnyv+k/+yi7Kt1vmJ4eXeb5A38O4oGc+vWbnsURKIjsLMNY1BycTSU11Tpv077YgbDYKvitci6FQOlzw/hOM4PIcFUaekXM+sVtggl4LnPtMNceXTpoFTRiIvqtub9FzlV40LEEcE0SsKaYEZ3R+oX1P8SWx3PRgmQx+RRckoe43/lN+8ZNnOtDGxMkZkkO056Ws116oDMo0SUlbzYYI3z1bFfyY8cb/Ezgxu4fIk2Ir1A3WYw0dKIkcgIkGXh5a0LQuW6QzvA==",
+  "created_at": "2025-10-17T05:06:14.099Z"
+}
