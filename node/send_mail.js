@@ -7,8 +7,8 @@ const GMAIL_APP_PASSWORD = "YOUR_APP_PASSWORD_HERE"; // replace with app passwor
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: GMAIL_USER,
-    pass: GMAIL_APP_PASSWORD,
+    user: 'disaster.relay.demo@gmail.com',
+    pass: 'GMAIL_APP_PASSWORD',
   },
 });
 
